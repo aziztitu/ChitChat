@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ash.chitchat.HomeController">
+   <children>
+      <Label layoutX="182.0" layoutY="103.0" text="Chit Chat" textFill="WHITE">
+         <font>
+            <Font name="Avant Garde Medium BT" size="55.0" />
+         </font>
+      </Label>
+      <Button layoutX="240.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#startAsClient" style="-fx-background-color: #0088fe;" text="Join a chat" textFill="#363636">
+         <font>
+            <Font name="Avant Garde Medium BT" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="239.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#startAsServer" style="-fx-background-color: #f43838;" text="Host a chat" textFill="#f2f2f2">
+         <font>
+            <Font name="Avant Garde Medium BT" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

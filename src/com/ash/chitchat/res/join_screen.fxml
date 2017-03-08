@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ash.chitchat.JoinScreenController">
+   <children>
+      <Label layoutX="223.0" layoutY="94.0" text="Join a chat" textFill="WHITE">
+         <font>
+            <Font name="Avant Garde Medium BT" size="30.0" />
+         </font>
+      </Label>
+      <VBox layoutX="140.0" layoutY="221.0" prefWidth="320.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label prefWidth="120.0" text="Name :" textFill="#fcfcfc">
+                     <font>
+                        <Font name="Avant Garde Book BT" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="NameTF" onAction="#joinChat" prefWidth="200.0" promptText="Enter your name..." />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefWidth="120.0" text="Host Address:" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="HostAddressTF" onAction="#joinChat" prefWidth="200.0" promptText="Enter the host's address...">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane>
+               <children>
+                  <Button fx:id="joinBtn" mnemonicParsing="false" onMouseClicked="#joinChat" style="-fx-background-color: #7f9d4a;" text="Join" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Label fx:id="msgLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="403.0" prefHeight="76.0" prefWidth="600.0" textAlignment="CENTER" textFill="#f22d2d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="Avant Garde Medium BT" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
