@@ -4,6 +4,7 @@ package com.ash.chitchat.others;
  * Created by azizt on 2/23/2017.
  */
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base32;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -83,7 +84,8 @@ public class AES
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 
 
-            return (Base64.encodeBase64String(cipher.doFinal(strToEncrypt.trim().getBytes("UTF-8"))));
+//            return (Base64.encodeBase64String(cipher.doFinal(strToEncrypt.trim().getBytes("UTF-8"))));
+            return (new Base32().encodeAsString(cipher.doFinal(strToEncrypt.trim().getBytes("UTF-8"))));
 
         }
         catch (Exception e)
@@ -100,7 +102,8 @@ public class AES
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
 
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            return (new String(cipher.doFinal(Base64.decodeBase64(strToDecrypt.trim()))));
+//            return (new String(cipher.doFinal(Base64.decodeBase64(strToDecrypt.trim()))));
+            return (new String(cipher.doFinal(new Base32().decode(strToDecrypt.trim()))));
 
         }
         catch (Exception e)
